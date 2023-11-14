@@ -1,5 +1,6 @@
 "use client"
 import { aboutInfo } from "@/constants/about-info"
+import Image from "next/image"
 import { useState } from "react"
 import CountUp from "react-countup"
 import ScrollTrigger from "react-scroll-trigger"
@@ -11,9 +12,11 @@ const SectionCount = () => {
       <section id="count" className="font-rubik">
         <div className="w-full relative h-full min-h-[350px] xm:pb-0 pb-7">
           <div className="absolute w-full h-full bottom-[-20px]">
-            <img
+            <Image
               src={"/borde.png"}
               alt="borde"
+              width={900}
+              height={900}
               className="w-screen h-full object-fill"
             />
           </div>
@@ -26,21 +29,7 @@ const SectionCount = () => {
                       key={c.id}
                       className="flex flex-col text-white text-center py-6"
                     >
-                      <ScrollTrigger
-                        onEnter={() => {
-                          setCounterOn(true)
-                        }}
-                        onExit={() => {
-                          setCounterOn(false)
-                        }}
-                      >
-                        <span className="font-bold font-rubik px-3 sm:text-[30px] text-[25px]">
-                          +
-                          {counterOn && (
-                            <CountUp start={0} end={c.num} duration={2} />
-                          )}
-                        </span>
-                      </ScrollTrigger>
+                      <CountUp start={0} end={c.num} duration={2} />
 
                       <span className="uppercase font-semibold font-rubik px-3 sm:text-[16px] text-[14px]">
                         {c.display}
@@ -51,11 +40,12 @@ const SectionCount = () => {
               </div>
             </div>
             <div className="flex justify-center items-center px-3 sm:pt-0 pt-7">
-              <img
+              <Image
                 src={"/gray_hyundai.png"}
                 alt="Camioneta gris"
+                width={600}
+                height={400}
                 className="w-[80%] animation"
-                data-aos="fade-right"
               />
             </div>
           </div>
