@@ -27,11 +27,13 @@ const SectionCount = () => {
                   {aboutInfo.count.map((c) => (
                     <div
                       key={c.id}
-                      className="flex flex-col text-white text-center py-6"
+                      className="flex flex-col text-white text-center py-6 text-[30px] font-bold"
                     >
-                      <CountUp start={0} end={c.num} duration={2} />
-
-                      <span className="uppercase font-semibold font-rubik px-3 sm:text-[16px] text-[14px]">
+                      <div className="flex justify-center">
+                        +
+                        <CountUp start={0} end={c.num} duration={3} />
+                      </div>
+                      <span className="uppercase font-semibold font-rubik px-3 sm:text-[16px] text-[4px]">
                         {c.display}
                       </span>
                     </div>
