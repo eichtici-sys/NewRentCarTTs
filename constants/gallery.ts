@@ -242,7 +242,7 @@ export const gallery: Gallery[] = [
       {
         marca: "Chevrolet",
         modelo: "Tracker",
-        asientos: 7,
+        asientos: 5,
         año: 2020,
         motor: "Mecanico",
         combustible: "Gasolina",

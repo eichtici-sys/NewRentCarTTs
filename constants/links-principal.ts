@@ -9,7 +9,7 @@ export const principalLinks: PrincipalLinks[] = [
   {
     id: 1,
     display: "Ver la flota",
-    link: "/gallery",
+    link: "/fleet",
     target: false,
   },
   {
