@@ -16,7 +16,7 @@ export default function Hero() {
             className={` absolute z-10 text-white bottom-20 sm:bottom-28 w-full text-center`}
           >
             <span className={`${speed.className} block sm:text-5xl text-2xl`}>
-              Un Camino de Libertad
+              Viajando por las rutas del Peru
             </span>
             <div className="mt-4 sm:text-xl text-base flex gap-2 items-center justify-center">
               <Link href={"/about"}> DESCUBRIR MÁS</Link>

@@ -14,7 +14,7 @@ const SectionAbout = () => {
                 data-aos-delay={`${
                   index === 0 ? "300" : index === 1 ? "700" : "1200"
                 }`}
-                data-aos-duration={`${(index + 1) * 800}`}
+                data-aos-duration={`${(index + 1) * 500}`}
               >
                 <div className="w-[110px] h-[110px] blue-gradient rounded-[15px] flex justify-center items-center">
                   <card.icon className=" w-16 h-16 text-white" />

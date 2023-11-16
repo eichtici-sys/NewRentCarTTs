@@ -449,6 +449,12 @@
   right: 0;
   background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
 }
+@media (max-width: 600px) {
+  .logos:before,
+  .logos:after {
+    background: none; 
+  }
+}
 .logos:hover .sliders-logo{
   animation-play-state: paused;
 }

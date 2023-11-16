@@ -1,4 +1,3 @@
-import React from "react"
 import Bars from "./Bars"
 import Button from "./Button"
 import Image from "next/image"
@@ -34,14 +33,18 @@ export default function AboutInfo() {
                       alt="Auto en la noche"
                       width={200}
                       height={200}
-                      className=" rounded-xl p-2 sm:w-[42%]"
+                      className=" rounded-xl p-2 sm:w-[42%] animation"
+                      data-aos="zoom-out"
+                      data-aos-duration={200}
                     />
                     <Image
                       src={"/info2.webp"}
                       width={230}
                       height={230}
                       alt="Interior auto"
-                      className=" rounded-xl p-2 sm:w-[58%]"
+                      className=" rounded-xl p-2 sm:w-[58%] animation"
+                      data-aos="zoom-out"
+                      data-aos-duration={200}
                     />
                   </div>
                 </div>
@@ -50,8 +53,13 @@ export default function AboutInfo() {
                     <div
                       className="flex justify-start mb-2 animation"
                       data-aos="fade-right"
+                      data-aos-duration={300}
                     >
-                      <span className="text-secondary uppercase font-rubik font-semibold md:text-[16px] text-[14px]">
+                      <span
+                        className="text-secondary uppercase font-rubik font-semibold md:text-[16px] text-[14px] animation"
+                        data-aos="fade-right"
+                        data-aos-duration={300}
+                      >
                         Sobre nosotros
                       </span>
                     </div>
@@ -59,6 +67,7 @@ export default function AboutInfo() {
                       <span
                         className="text-white font-rubik font-semibold md:text-[32px] text-[25px] animation"
                         data-aos="fade-right"
+                        data-aos-duration={400}
                       >
                         Nuestros mas de 15 años en el rubro nos respaldan
                       </span>
@@ -67,6 +76,7 @@ export default function AboutInfo() {
                       <p
                         className="text-ligthText font-rubik font-light md:text-[16px] sm:text-[14px] text-[12px] text-justify animation"
                         data-aos="fade-left"
+                        data-aos-duration={400}
                       >
                         <span className="font-bold">New Rent Car</span> es una
                         empresa líder de proveedores de servicios de movilidad,
@@ -82,6 +92,7 @@ export default function AboutInfo() {
                         styles={`uppercase flex sm:justify-start justify-center items-center py-2 md:text-[20px] sm:text-[16px] text-[14px] hover:underline animation`}
                         target={false}
                         href={`/about`}
+                        dataaos={`fade-up`}
                       />
                     </div>
                   </div>

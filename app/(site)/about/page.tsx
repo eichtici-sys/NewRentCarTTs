@@ -1,6 +1,8 @@
 "use client"
 import HeaderAbout from "@/components/HeaderAbout"
+import Aos from "aos"
 import dynamic from "next/dynamic"
+import { useEffect } from "react"
 
 const AboutInfoDi = dynamic(() => import("@/components/SectionInfo"), {
   ssr: false,
@@ -15,6 +17,9 @@ const SectionCountDi = dynamic(() => import("@/components/SectionCount"), {
 })
 
 export default function AboutPage() {
+  useEffect(() => {
+    Aos.init({ duration: 3000 })
+  }, [])
   return (
     <div>
       <div

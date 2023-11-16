@@ -1,4 +1,3 @@
-import React from "react"
 import Bars from "./Bars"
 import { steps } from "@/constants/steps"
 
@@ -53,16 +52,16 @@ export default function HowDoesItWork() {
                       <span
                         className="text-[#86c5ff] font-bold font-rubik text-[85px] animation"
                         data-aos="zoom-in"
-                        data-aos-delay={`${(index + 1) * 600}`}
-                        data-aos-duration={`${(index + 1) * 500}`}
+                        data-aos-delay={`${(index + 1) * 500}`}
+                        data-aos-duration={`${(index + 1) * 400}`}
                       >
                         {step.id}
                       </span>
                       <div
                         className="relative w-[240px] animation"
                         data-aos="zoom-in"
-                        data-aos-delay={`${(index + 1) * 1000}`}
-                        data-aos-duration={`${(index + 1) * 500}`}
+                        data-aos-delay={`${(index + 1) * 900}`}
+                        data-aos-duration={`${(index + 1) * 400}`}
                       >
                         <div className="sm:w-[198px] w-[160px] bg-primary flex flex-col border-2 border-primary rounded-[12px] ml-7 z-10 relative hover:border-white select-none hover:bg-pBlack transition-all">
                           <div className="flex justify-center items-center pt-5 pb-3">

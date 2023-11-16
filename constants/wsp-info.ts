@@ -5,7 +5,7 @@ type SocialInfo = {
 }
 
 export const wspInfo: SocialInfo = {
-  number: "942634522",
+  number: "951734513",
   text1:
     "Estoy%20interesado%20en%20el%20alquiler%20de%20uno%20de%20sus%20vehiculos%20de%20su%20flota",
   text2:

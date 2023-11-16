@@ -6,6 +6,7 @@ import FooterPage from "@/components/Footer"
 import WhatsappButton from "@/components/WhatsappButton"
 import ToastProvider from "./toast.provider"
 import { gallery } from "@/constants/gallery"
+import "aos/dist/aos.css"
 
 const sarpanch = Sarpanch({
   weight: ["400", "500", "600", "700", "800", "900"],

@@ -1,12 +1,8 @@
-"use client"
 import { aboutInfo } from "@/constants/about-info"
 import Image from "next/image"
-import { useState } from "react"
 import CountUp from "react-countup"
-import ScrollTrigger from "react-scroll-trigger"
 
 const SectionCount = () => {
-  const [counterOn, setCounterOn] = useState(false)
   return (
     <>
       <section id="count" className="font-rubik">
@@ -33,7 +29,7 @@ const SectionCount = () => {
                         +
                         <CountUp start={0} end={c.num} duration={3} />
                       </div>
-                      <span className="uppercase font-semibold font-rubik px-3 sm:text-[16px] text-[4px]">
+                      <span className="uppercase font-semibold font-rubik px-3 sm:text-[16px] text-[14px]">
                         {c.display}
                       </span>
                     </div>
@@ -48,6 +44,8 @@ const SectionCount = () => {
                 width={600}
                 height={400}
                 className="w-[80%] animation"
+                data-aos="fade-right"
+                data-aos-duration={400}
               />
             </div>
           </div>
