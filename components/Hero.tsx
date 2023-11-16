@@ -30,6 +30,7 @@ export default function Hero() {
               autoPlay
               muted
               loop
+              poster="/poster.png"
               className=" object-cover h-screen w-screen"
             >
               <source src="/new_rent_car_VP9.webm" type="video/webm" />

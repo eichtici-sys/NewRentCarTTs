@@ -1,18 +1,25 @@
 "use client"
 import { Scroll } from "@/icons"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 const ScrollButton = () => {
   const [showScrollTopButton, setShowScrollTopButton] = useState(false)
 
-  const showBtnScroll = () => {
-    if (window.scrollY >= 300) {
-      setShowScrollTopButton(true)
-    } else {
-      setShowScrollTopButton(false)
+  useEffect(() => {
+    const showBtnScroll = () => {
+      if (window.scrollY >= 300) {
+        setShowScrollTopButton(true)
+      } else {
+        setShowScrollTopButton(false)
+      }
     }
-  }
-  window.addEventListener("scroll", showBtnScroll)
+
+    window.addEventListener("scroll", showBtnScroll)
+
+    return () => {
+      window.removeEventListener("scroll", showBtnScroll)
+    }
+  }, [])
 
   const scrollToTop = () => {
     window.scrollTo({
