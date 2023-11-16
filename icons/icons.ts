@@ -25,6 +25,7 @@ import { ReactComponent as Combustible } from "./src/Combustible.svg"
 import { ReactComponent as CajaCambios } from "./src/CajaCambios.svg"
 import { ReactComponent as Menu } from "./src/Menu.svg"
 import { ReactComponent as Close } from "./src/Close.svg"
+import { ReactComponent as Scroll } from "./src/Scroll.svg"
 
 export {
   ArrowTriangle,
@@ -54,4 +55,5 @@ export {
   CajaCambios,
   Menu,
   Close,
+  Scroll,
 }

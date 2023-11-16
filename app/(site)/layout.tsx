@@ -7,6 +7,7 @@ import WhatsappButton from "@/components/WhatsappButton"
 import ToastProvider from "./toast.provider"
 import { gallery } from "@/constants/gallery"
 import "aos/dist/aos.css"
+import ScrollButton from "@/components/ScrollButton"
 
 const sarpanch = Sarpanch({
   weight: ["400", "500", "600", "700", "800", "900"],
@@ -54,6 +55,7 @@ export default function RootLayout({
         <ToastProvider>
           <Navbar />
           <main>{children}</main>
+          <ScrollButton />
           <WhatsappButton />
           <FooterPage />
         </ToastProvider>
