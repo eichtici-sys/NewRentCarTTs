@@ -1,14 +1,9 @@
 import React, { ChangeEvent, useRef, useState } from "react"
 import { z } from "zod"
 import { toast } from "react-toastify"
+import { FormState, sendContactForm } from "@/lib/api"
+import { LoadingData } from "./LoadingData"
 
-type FormState = {
-  name: string
-  mail: string
-  phone: string
-  issue: string
-  message: string
-}
 type FormErrors = Record<string, string>
 export default function ContactForm() {
   const initialForm = {
@@ -21,13 +16,12 @@ export default function ContactForm() {
   const [form, setForm] = useState<FormState>(initialForm)
   const [errors, setErrors] = useState<FormErrors>({})
   const [loading, setLoading] = useState(false)
-  const [response, setResponse] = useState(null)
   const formContact = useRef<HTMLFormElement | null>(null)
   const styleInput =
     "h-[38px] rounded-md border-dimLabel border-[1px] outline-none px-4 font-rubik text-darkText font- focus:border-[2px] focus:border-secondary"
 
   const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target
     setForm({
@@ -36,7 +30,7 @@ export default function ContactForm() {
     })
   }
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     setLoading(true)
     e.preventDefault()
     try {
@@ -56,7 +50,18 @@ export default function ContactForm() {
       return
     }
 
-    //TODO CREAR EMAILJS
+    try {
+      await sendContactForm(form)
+      setForm(initialForm)
+      setLoading(false)
+      toast.success("Mensaje enviado")
+    } catch (error) {
+      setForm(initialForm)
+      setLoading(false)
+      toast.error("Hubo un error al enviar el mensaje")
+    }
+
+    await sendContactForm(form)
   }
 
   return (
@@ -173,29 +178,21 @@ export default function ContactForm() {
                 </p>
               )}
             </div>
-            <div className="py-5 px-8 flex flex-col w-full gap-2">
-              <input
-                type="submit"
-                value="Enviar"
-                className="blue-gradient w-full h-[38px] text-white rounded-md cursor-pointer font-semibold text-[16px]"
-              />
-            </div>
+            {loading && (
+              <div className="mt-5 mb-3">
+                <LoadingData />
+              </div>
+            )}
+            {!loading && (
+              <div className="py-5 px-8 flex flex-col w-full gap-2">
+                <input
+                  type="submit"
+                  value="Enviar"
+                  className="blue-gradient w-full h-[38px] text-white rounded-md cursor-pointer font-semibold text-[16px]"
+                />
+              </div>
+            )}
           </form>
-          {/* {loading && (
-            <div className="w-full flex flex-col justify-center items-center py-2">
-              <BeatLoader
-                loading={loading}
-                size={10}
-                color={`#0058c9`}
-                aria-label="Loading Spinner"
-                data-testid="loader"
-              />
-              <p className="font-normal font-rubik text-primary text-[13px]">
-                Enviando Mensaje
-              </p>
-            </div>
-          )} */}
-          {/* {response && <Success />} */}
         </div>
       </div>
     </>
@@ -209,7 +206,7 @@ const formSchema = z.object({
     .string()
     .refine(
       (value) => /^[+\d\s-]*\d{9,}$/.test(value),
-      "Por favor ingrese un número de celular válido. Ej: +51999999999"
+      "Por favor ingrese un número de celular válido. Ej: +51999999999",
     ),
   issue: z.string().trim().nonempty("El Asunto es requerido"),
   message: z.string().trim().nonempty("El mensaje es requerido"),
