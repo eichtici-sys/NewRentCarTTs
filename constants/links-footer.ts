@@ -111,6 +111,11 @@ export const linksFooter: LinksFooterType[] = [
             content: "new_rentacar@hotmail.com",
             href: "mailto:new_rentacar@hotmail.com?subject=Solicitud de Reserva&body=Hola, necesito cotizar uno de sus servicios que quiero contratar",
           },
+          {
+            id: "c-2",
+            content: "newrentacar.gerencia@gmail.com",
+            href: "mailto:newrentacar.gerencia@gmail.com?subject=Solicitud de Reserva&body=Hola, necesito cotizar uno de sus servicios que quiero contratar",
+          },
         ],
         IconComponent: Mail,
       },
