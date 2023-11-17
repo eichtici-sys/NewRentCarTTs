@@ -24,7 +24,7 @@ const FooterPage = () => {
             {social.map((social) => (
               <div key={social.id}>
                 <a href={social.link} target="_blank">
-                  <social.icon className="sm:w-[35px] w-5 sm:h-[35px] h-5 text-white hover:text-secondary transition-colors" />
+                  <social.icon className="sm:w-[35px] w-10 sm:h-[35px] h-10 text-white hover:text-secondary transition-colors" />
                 </a>
               </div>
             ))}

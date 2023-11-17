@@ -2,11 +2,23 @@
 import Link from "next/link"
 import { useEffect, useState } from "react"
 import { FaRegUserCircle } from "react-icons/fa"
-import { Close, LogoNewRentCar, Menu } from "@/icons"
+import { Close, LogoNewRentCar, Menu, Pause, Play } from "@/icons"
 import { wspInfo } from "@/constants/wsp-info"
+// @ts-ignore
+import useSound from "use-sound"
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false)
+  const [isPlaying, setIsPlaying] = useState(false)
+  const [play, { stop }] = useSound("/wall-of-fame.wav", { volume: 0.25 })
+
+  useEffect(() => {
+    if (isPlaying) {
+      play()
+    } else {
+      stop()
+    }
+  }, [isPlaying, play, stop])
   useEffect(() => {
     if (typeof window !== undefined) {
       window.addEventListener("scroll", function () {
@@ -15,6 +27,16 @@ const Navbar = () => {
       })
     }
   }, [])
+
+  const handlePlay = () => {
+    play()
+    setIsPlaying(true)
+  }
+
+  const handlePause = () => {
+    stop()
+    setIsPlaying(false)
+  }
 
   return (
     <header className="w-full fixed top-0 text-white z-50 xl:max-w-[1440px] xl:mx-auto">
@@ -66,7 +88,12 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <FaRegUserCircle className="w-6 h-6 text-white" />
+              {isPlaying && (
+                <Pause className="w-6 h-6 text-white" onClick={handlePause} />
+              )}
+              {!isPlaying && (
+                <Play className="w-6 h-6 text-white" onClick={handlePlay} />
+              )}
             </li>
           </ul>
         </nav>
@@ -116,6 +143,21 @@ const Navbar = () => {
                 >
                   Reservar
                 </a>
+              </li>
+              <li className="pt-4">
+                {isPlaying && (
+                  <div className="bg-white p-3 rounded-full">
+                    <Pause
+                      className="w-6 h-6 text-black"
+                      onClick={handlePause}
+                    />
+                  </div>
+                )}
+                {!isPlaying && (
+                  <div className="bg-white p-3 rounded-full">
+                    <Play className="w-6 h-6 text-black" onClick={handlePlay} />
+                  </div>
+                )}
               </li>
             </ul>
           </div>
