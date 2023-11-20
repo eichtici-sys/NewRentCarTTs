@@ -8,11 +8,11 @@ export const social: SocialMedia[] = [
   {
     id: "social-1",
     icon: BsFacebook,
-    link: "https://www.facebook.com/profile.php?id=100064221667312&mibextid=ZbWKwL",
+    link: "https://www.facebook.com/profile.php?id=100064221667312",
   },
   {
     id: "social-2",
     icon: BsInstagram,
-    link: "https://instagram.com/new_rent_car?igshid=YmMyMTA2M2Y=",
+    link: "https://instagram.com/newrentcartrujillo?igshid=YTA1Njc0MTg3OQ==",
   },
 ]
