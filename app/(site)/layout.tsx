@@ -21,11 +21,8 @@ const rubik = Rubik({
 })
 
 export const metadata: Metadata = {
-  title: "New Rent Car | Alquiler de Vehículos",
+  title: "New Rent Car | Alquiler de Vehículos en Trujillo",
   description: "Alquiler de vehículos y otros servicios",
-  icons: {
-    icon: "/logo.svg",
-  },
   openGraph: {
     images: [
       {
@@ -33,6 +30,11 @@ export const metadata: Metadata = {
       },
     ],
   },
+  keywords:
+    "Alquiler de Camionetas, alquiler de Suv, Alquiler de Autos, Alquiler de camionetas en Trujillo, Renta de Camionetas, Autos para boda, New Rent Car, New Rent Car Trujillo, Recojo al aeropuerto, Autos de lujo Trujillo, Transporte de personal, rent a car Peru, rent a car trujillo, rent a car in trujillo, Camionetas en Trujillo",
+  applicationName: "New Rent Car Landing Page",
+  authors: [{ name: "Henry Tirado", url: "http://www.eichtici.com" }],
+  creator: "Eichtici Developer",
 }
 
 export default function RootLayout({
@@ -43,6 +45,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${rubik.variable} overflow-x-hidden `}>
       <head>
+        <meta name="copyright" content="Copyright 2023 New Rent Car EIRL" />
         <link rel="preload" href="/new_rent_car_VP9.webm" />
         <link rel="preload" href="/service-1.webp" />
         <link rel="preload" href="/service-2.webp" />
